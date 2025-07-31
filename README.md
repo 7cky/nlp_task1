@@ -54,4 +54,8 @@ softmax回归是LR逻辑回归在多分类问题上的应用推广。
 根据下图可知，shuffle随机梯度下降和mini-batch小批量梯度下降优于batch整体批量下降，N-gram的特征提取方式优于BoW。在学习率到达1之后，shuffle随机梯度下降和mini-batch小批量梯度下降的准确率保持在较稳定水平，只有batch整体批量下降的准确率在提升。
  <img width="727" height="545" alt="figure" src="https://github.com/user-attachments/assets/da4129b6-b38e-458b-bb2c-4ca201562e1f" />
 
-为进一步得到不同特征提取方式，不同梯度下降方法的损失函数可视化，先固定学习率为1，训练次数5000次。样本个数如果取之前的15000跑不动，用5000跑了一下，但效果很差，在这里没有放图。看等写完其他的有没有另外的解决方法。
+用损失函数可视化模型训练效果，固定学习率为0.1，训练次数10000次
+<img width="1280" height="624" alt="Fi1" src="https://github.com/user-attachments/assets/b525aead-d00b-42f9-b9aa-6b20428354dd" />
+N-gram特征提取在训练集表现更优，所有梯度下降的损失率在0.8左右，但词袋模型在测试集表现更优，损失率在1.5左右，随机梯度下降在训练后期出现上升，可能存在过拟合情况。
+
+
